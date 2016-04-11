@@ -1,10 +1,10 @@
 def findMaxFactor(n):
-    print n
-    if n <= 3: return n
-    if n % 2 == 0:
-        return findMaxFactor(n/2)
-    if n % 3 == 0:
-        return findMaxFactor(n/3)
-    return n
+    factors = {}
+    d = n -1
+    while d > 1:
+        if n % d == 0:
+            factors.append(d)
+        d /= 2
+    return factors
 
-print findMaxFactor(215127)
+print max(findMaxFactor(204))
